@@ -1,4 +1,8 @@
 {
   "name": "backend-ts",
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.3.1",
+  "devDependencies": {
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  }
 }

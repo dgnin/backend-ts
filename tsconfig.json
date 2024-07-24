@@ -18,5 +18,5 @@
     "lib": ["es2021"],
     "target": "ES2021"
   },
-  "include": ["src/**/*", "tests/**/*"]
+  "include": ["webpack.config.ts", "src/**/*", "tests/**/*"]
 }

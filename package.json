@@ -5,6 +5,7 @@
     "@types/eslint": "^9.6.0",
     "@types/node": "^20.14.11",
     "@types/webpack": "^5.28.5",
+    "@types/webpack-node-externals": "^3",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
@@ -17,7 +18,8 @@
     "typescript": "^5.5.4",
     "typescript-eslint": "^7.17.0",
     "webpack": "^5.93.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
     "dev:example": "concurrently \"yarn watch\" \"yarn run-server:example\"",

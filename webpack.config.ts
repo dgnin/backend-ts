@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import ESLintWebpackPlugin from 'eslint-webpack-plugin';
+import webpackNodeExternals from 'webpack-node-externals';
 
 const config: webpack.Configuration = {
   target: 'node',
@@ -29,4 +30,16 @@ const config: webpack.Configuration = {
   },
 };
 
-export default config;
+export default (_env: unknown, argv: { mode: string }) => {
+  if (argv.mode !== 'development') {
+    return config;
+  }
+
+  return {
+    ...config,
+    externals: [webpackNodeExternals()],
+    externalsPresets: {
+      node: true,
+    },
+  };
+};

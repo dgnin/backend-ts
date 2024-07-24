@@ -5,7 +5,7 @@
     "@types/eslint": "^9.6.0",
     "@types/node": "^20.14.11",
     "@types/webpack": "^5.28.5",
-    "eslint": "^9.7.0",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-webpack-plugin": "^4.2.0",
     "prettier": "^3.3.3",

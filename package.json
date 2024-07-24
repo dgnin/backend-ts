@@ -18,5 +18,10 @@
     "typescript-eslint": "^7.17.0",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "dev:example": "concurrently \"yarn watch\" \"yarn run-server:example\"",
+    "run-server:example": "nodemon -q dist/example.js",
+    "watch": "webpack --mode=development --watch"
   }
 }

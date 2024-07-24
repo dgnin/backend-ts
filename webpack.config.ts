@@ -5,7 +5,7 @@ import ESLintWebpackPlugin from 'eslint-webpack-plugin';
 const config: webpack.Configuration = {
   target: 'node',
   entry: {
-    products: './src/apps/Products/app.ts',
+    example: './src/apps/Example/app.ts',
   },
   devtool: 'inline-source-map',
   module: {

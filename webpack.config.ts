@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import ESLintWebpackPlugin from 'eslint-webpack-plugin';
 
 const config: webpack.Configuration = {
   target: 'node',
@@ -16,6 +17,12 @@ const config: webpack.Configuration = {
       },
     ],
   },
+  plugins: [
+    new ESLintWebpackPlugin({
+      extensions: ['ts'],
+      cache: false,
+    }),
+  ],
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),

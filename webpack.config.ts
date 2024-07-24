@@ -26,7 +26,7 @@ const config: webpack.Configuration = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-  }
+  },
 };
 
 export default config;

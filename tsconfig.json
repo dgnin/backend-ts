@@ -7,6 +7,9 @@
     "noUnusedLocals": true,
     "strict": true,
     "module": "Node16",
+    "paths": {
+      "@apps/*": ["./src/apps/*"],
+    },
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "outDir": "dist",

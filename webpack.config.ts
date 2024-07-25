@@ -24,6 +24,12 @@ const config: webpack.Configuration = {
       cache: false,
     }),
   ],
+  resolve: {
+    extensions: ['.ts', '.js'],
+    alias: {
+      '@apps': path.resolve(__dirname, 'src/apps'),
+    },
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),

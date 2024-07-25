@@ -3,6 +3,7 @@
   "packageManager": "yarn@4.3.1",
   "devDependencies": {
     "@types/eslint": "^9.6.0",
+    "@types/express": "^4",
     "@types/node": "^20.14.11",
     "@types/webpack": "^5.28.5",
     "@types/webpack-node-externals": "^3",
@@ -25,5 +26,8 @@
     "dev:example": "concurrently \"yarn watch\" \"yarn run-server:example\"",
     "run-server:example": "nodemon -q dist/example.js",
     "watch": "webpack --mode=development --watch"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
   }
 }

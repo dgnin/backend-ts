@@ -1029,6 +1029,7 @@ __metadata:
     eslint-config-prettier: "npm:^9.1.0"
     eslint-webpack-plugin: "npm:^4.2.0"
     express: "npm:^4.19.2"
+    http-status: "npm:^1.7.4"
     husky: "npm:^9.1.1"
     nodemon: "npm:^3.1.4"
     prettier: "npm:^3.3.3"
@@ -2203,6 +2204,13 @@ __metadata:
     agent-base: "npm:^7.1.0"
     debug: "npm:^4.3.4"
   checksum: 10c0/4207b06a4580fb85dd6dff521f0abf6db517489e70863dca1a0291daa7f2d3d2d6015a57bd702af068ea5cf9f1f6ff72314f5f5b4228d299c0904135d2aef921
+  languageName: node
+  linkType: hard
+
+"http-status@npm:^1.7.4":
+  version: 1.7.4
+  resolution: "http-status@npm:1.7.4"
+  checksum: 10c0/7b550096af22c8330218d1ff3d0736d3d5c84b90f499fdd16b2f7fc74895b18d7ff1e35ca4cb2ce138617347826480da5460ba6ae90eef0783e2c67a49471f10
   languageName: node
   linkType: hard
 

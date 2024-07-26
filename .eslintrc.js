@@ -9,7 +9,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: { project: ['./tsconfig.json'] },
   plugins: ['@typescript-eslint'],
-  ignorePatterns: ['**/*.js', 'node_modules/**/*', 'dist/**/*'],
+  ignorePatterns: ['**/*.js', 'node_modules/**/*', 'dist/**/*', 'jest.config.ts'],
   rules: {
     '@typescript-eslint/consistent-indexed-object-style': ['error', 'index-signature'],
     '@typescript-eslint/no-confusing-void-expression': 'off',

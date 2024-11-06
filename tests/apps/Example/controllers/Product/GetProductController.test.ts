@@ -14,7 +14,7 @@ describe('GetProductController', () => {
     expect(res.body).toEqual(httpStatus[httpStatus.NOT_FOUND]);
   });
 
-  it('should return the Product if it exists', async () => {
+  it('should return 200 if the Product exists', async () => {
     const product = ProductBuilder.buildInTestDB();
     const res = await supertest(app).get(`/products/${product.id.value}`);
 

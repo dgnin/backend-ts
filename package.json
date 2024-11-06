@@ -31,6 +31,8 @@
     "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
+    "test-unit": "jest tests/core",
+    "test-e2e": "jest tests/apps",
     "dev:example": "concurrently \"yarn watch\" \"yarn run-server:example\"",
     "run-server:example": "nodemon -q dist/example.js",
     "watch": "webpack --mode=development --watch"

@@ -22,5 +22,5 @@
     "lib": ["es2021"],
     "target": "ES2021"
   },
-  "include": ["src/**/*", "tests/**/*", "webpack.config.ts", "jest.config.ts"]
+  "include": ["src/**/*", "tests/**/*", "webpack.config.ts", "jest.config.ts", "index.d.ts"]
 }

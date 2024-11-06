@@ -8,7 +8,8 @@ import ProductMapper from '@apps/Example/mappers/ProductMapper';
 
 export default class ProductMySqlRepository extends MySqlRepository implements ProductRepository {
   public async find(id: ProductId): Promise<Product | null> {
-    const [productRows] = await this.pool.query<ProductMySqlRow[]>(
+    const pool = this.createPool();
+    const [productRows] = await pool.query<ProductMySqlRow[]>(
       `
         SELECT p.id, p.name, b.id AS brandId, b.name as brandName
         FROM products p
@@ -17,6 +18,7 @@ export default class ProductMySqlRepository extends MySqlRepository implements P
       `,
       [id.value],
     );
+    await pool.end();
 
     if (!productRows.length) {
       return null;
@@ -26,13 +28,15 @@ export default class ProductMySqlRepository extends MySqlRepository implements P
   }
 
   public async findAll(): Promise<Product[]> {
-    const [productRows] = await this.pool.query<ProductMySqlRow[]>(
+    const pool = this.createPool();
+    const [productRows] = await pool.query<ProductMySqlRow[]>(
       `
         SELECT p.id, p.name, b.id AS brandId, b.name as brandName
         FROM products p
         INNER JOIN brands b ON b.id = p.brand_id;
       `,
     );
+    await pool.end();
 
     return productRows.map((productRow) => ProductMapper.fromMySqlToDomain(productRow));
   }

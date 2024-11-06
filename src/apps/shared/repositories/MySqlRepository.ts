@@ -1,9 +1,9 @@
 import mysql, { Pool, PoolOptions } from 'mysql2/promise';
 
 export default abstract class MySqlRepository {
-  protected readonly pool: Pool;
+  constructor(private readonly config: PoolOptions) {}
 
-  constructor(config: PoolOptions) {
-    this.pool = mysql.createPool(config);
+  protected createPool(): Pool {
+    return mysql.createPool(this.config);
   }
 }

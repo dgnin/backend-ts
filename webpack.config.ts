@@ -6,7 +6,7 @@ import webpackNodeExternals from 'webpack-node-externals';
 const config: webpack.Configuration = {
   target: 'node',
   entry: {
-    example: './src/apps/Example/app.ts',
+    example: './src/apps/Example/index.ts',
   },
   devtool: 'inline-source-map',
   module: {

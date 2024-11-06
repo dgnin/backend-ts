@@ -1,4 +1,14 @@
-import app from '@apps/shared/app';
-import config from '@apps/Example/config';
+import buildDefaultApp, { defaultErrorHandler } from '@apps/shared/app';
+import { Express } from 'express';
+import { PoolOptions } from 'mysql2/promise';
+import config from '@apps/Example/config/config';
 
-config(app).listen(process.env.EXAMPLE_APP_PORT);
+export default function buildExampleApp(dbOptions: PoolOptions): Express {
+  const app = buildDefaultApp();
+
+  config(app, dbOptions);
+
+  app.use(defaultErrorHandler);
+
+  return app;
+}

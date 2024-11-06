@@ -14,6 +14,14 @@ describe('GetProductUseCase', () => {
     subject = new GetProductUseCase(repository);
   });
 
+  it("should throw NotFoundError if doesn't exist", async () => {
+    const productId = ProductId.createRandom();
+    repository.find.mockResolvedValue(null);
+
+    await expect(async () => await subject.execute(productId.value)).rejects.toThrow(NotFoundError);
+    expect(repository.find.calledWith(productId));
+  });
+
   it('should return Product if exists', async () => {
     const expectedProduct = ProductBuilder.buildRandom();
     repository.find.mockResolvedValue(expectedProduct);
@@ -22,13 +30,5 @@ describe('GetProductUseCase', () => {
 
     expect(repository.find.calledWith(expectedProduct.id));
     expect(product).toBe(expectedProduct);
-  });
-
-  it("should throw NotFoundError if doesn't exist", async () => {
-    const productId = ProductId.createRandom();
-    repository.find.mockResolvedValue(null);
-
-    await expect(async () => await subject.execute(productId.value)).rejects.toThrow(NotFoundError);
-    expect(repository.find.calledWith(productId));
   });
 });

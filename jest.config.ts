@@ -7,6 +7,7 @@ const config: Config = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
     '^@apps/(.*)$': '<rootDir>/src/apps/$1',
+    '^@core/(.*)$': '<rootDir>/src/core/$1',
   },
 };
 

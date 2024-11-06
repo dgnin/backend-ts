@@ -18,7 +18,7 @@ describe('GetProductUseCase', () => {
     const productId = ProductId.createRandom();
     repository.find.mockResolvedValue(null);
 
-    await expect(async () => await subject.execute(productId.value)).rejects.toThrow(NotFoundError);
+    await expect(() => subject.execute(productId.value)).rejects.toThrow(NotFoundError);
     expect(repository.find.calledWith(productId));
   });
 

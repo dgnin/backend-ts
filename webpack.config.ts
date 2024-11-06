@@ -6,7 +6,7 @@ import webpackNodeExternals from 'webpack-node-externals';
 const config: webpack.Configuration = {
   target: 'node',
   entry: {
-    example: './src/apps/Example/app.ts',
+    example: './src/apps/Example/index.ts',
   },
   devtool: 'inline-source-map',
   module: {
@@ -24,6 +24,13 @@ const config: webpack.Configuration = {
       cache: false,
     }),
   ],
+  resolve: {
+    extensions: ['.ts', '.js'],
+    alias: {
+      '@apps': path.resolve(__dirname, 'src/apps'),
+      '@core': path.resolve(__dirname, 'src/core'),
+    },
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),

@@ -7,6 +7,10 @@
     "noUnusedLocals": true,
     "strict": true,
     "module": "Node16",
+    "paths": {
+      "@apps/*": ["./src/apps/*"],
+      "@core/*": ["./src/core/*"]
+    },
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "outDir": "dist",
@@ -18,5 +22,5 @@
     "lib": ["es2021"],
     "target": "ES2021"
   },
-  "include": ["webpack.config.ts", "src/**/*", "tests/**/*"]
+  "include": ["src/**/*", "tests/**/*", "webpack.config.ts", "jest.config.ts", "index.d.ts"]
 }

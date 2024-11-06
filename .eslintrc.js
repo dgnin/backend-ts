@@ -11,9 +11,8 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   ignorePatterns: ['**/*.js', 'node_modules/**/*', 'dist/**/*'],
   rules: {
-    '@typescript-eslint/consistent-indexed-object-style': ['error', 'index-signature'],
-    '@typescript-eslint/no-confusing-void-expression': 'off',
-    '@typescript-eslint/no-useless-constructor': 'off',
     '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: { arguments: false } }],
+    '@typescript-eslint/no-extraneous-class': ['error', { allowStaticOnly: true }],
+    '@typescript-eslint/consistent-indexed-object-style': ['off'],
   },
 };
